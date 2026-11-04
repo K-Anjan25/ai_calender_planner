@@ -601,3 +601,16 @@ provides the branded loading view. All233tests/lint/typecheck/build and both bro
 landing7widths, auth/legal/404/planner5widths. Auth capabilities are fixtures in browser acceptance,
 not external Google proof; zero-key planner builds use real routes. No PR/merge or production-live
 integration claim. Existing legacy HTML redirect remains authoritative.
+
+## Compact repository / README and favicon — 2026-11-04
+
+README intentionally stays minimal: centered calendar SVG above Calendra, one description,
+local run commands and test/build commands; no internal Markdown links or implementation essays.
+Internal docs remain repository-only. Canonical src/app/icon.svg is also the README image; its tighter
+viewBox and opaque blue details improve small-size clarity. `npm run icons` reproduces v11 PNGs,
+Apple icon and a four-resolution PNG-backed ICO (16/32/48/64). Metadata uses v11 for cache refresh.
+Removed archived standalone source/generated HTML and its build/check scripts, old v2–v10 icon
+assets, unused Next starter SVGs, ad-hoc dbg/why scripts and unused framer-motion/date-fns/tailwind-merge
+dependencies. Kept the /calendra.html -> / permanent redirect for bookmarks; kept active tests,
+native/browser checks and internal docs. Lint/typecheck, 234 tests, production build and HTTP icon/
+metadata/legacy-redirect checks passed. No live external-provider verification implied.

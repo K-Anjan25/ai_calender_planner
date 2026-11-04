@@ -13,9 +13,9 @@ export const metadata: Metadata = {
     'Give Calendra your tasks, deadlines and preferences. It builds a realistic week — or tells you exactly what does not fit, and what to trade.',
   applicationName: 'Calendra',
   icons: {
-    icon: [{ url: '/calendra-icon-v10.png', type: 'image/png', sizes: '64x64' }],
-    shortcut: '/calendra-icon-v10.png',
-    apple: [{ url: '/calendra-apple-v10.png', sizes: '180x180', type: 'image/png' }],
+    icon: [{ url: '/calendra-icon-v11.png', type: 'image/png', sizes: '64x64' }],
+    shortcut: '/calendra-icon-v11.png',
+    apple: [{ url: '/calendra-apple-v11.png', sizes: '180x180', type: 'image/png' }],
   },
 }
 
