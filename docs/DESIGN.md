@@ -498,3 +498,56 @@ to the tile. Arrow inspection keeps focus on the canvas. Main buttons/tabs/remov
 Publishing selection is shared by dry-run/export/approval; changing selection retires old feedback.
 Undo reveals a confirmation with keyboard focus before any deletion request. Current local browser
 checks are not a guarantee of complete accessibility or live-provider readiness.
+
+## Landing redesign: Bauhaus — 2026-10-27
+
+The latest landing-page direction supersedes its previous pastel palette and editorial layout.
+It does not replace the planner, authentication or legal-page design systems.
+
+- Scoped CSS module: warm off-white canvas, near-black ink, primary red/blue/yellow accents.
+- DM Sans/system sans typography throughout the landing, including the retained calendar wordmark.
+- Strong aligned grids, square controls, thin rules, circles/squares/triangles as CSS geometry.
+- Right-side illustrative weekly calendar on desktop; stacked mobile composition, no horizontal
+  scrolling. Explicit cells/blocks share the same tracks; displayed durations match row spans.
+- No particles, raster illustrations, invented adoption statistics or floating CTA overlays.
+- Sticky bounded header, native mobile navigation dialog with Escape/focus restoration, skip link,
+  reduced-motion-aware anchors, accessible FAQ buttons and associated answer panels.
+- Same-origin contact/newsletter routes retain validation, pending, failure/retry and accepted-only
+  success states. Pro/Teams remain enquiries, not paid checkout. Compact Hyderabad map retained.
+- Palette tests now distinguish the scoped landing palette from the unchanged application palette;
+  AA action/text contrast is checked numerically. Existing planner contrast coverage remains.
+
+Validation: lint, typecheck, 230 automated tests, production build, and Chromium at
+320/390/768/900/1024/1280/1440px. Browser checks cover calendar geometry/right-side placement,
+overflow, navigation, FAQs, enquiry prefilling, contact validation/failure/retry/success, newsletter
+and footer identity/map. Font/map network delivery is stubbed or blocked in those checks; no real
+marketing delivery, Google OAuth or model inference is implied.
+
+## Site-wide Bauhaus extension — 2026-10-27
+
+The latest request extends the landing direction to the entire product, superseding the previous
+landing-only scope. Shared application tokens now use warm off-white, near-black, primary blue/red
+and yellow, DM Sans/Arial sans typography, square architectural surfaces and neutral rules. Legacy
+internal `paper-*`/tone names remain compatibility aliases, not a customer-facing material style.
+
+- Sign-in/sign-up: large two-tone headings, geometric illustration, square Google/demo/account
+  actions, clear private/unconfigured/error states, and the existing storage/privacy disclosures.
+- Shared header/footer: consistent brand, primary navigation, account state, native modal mobile
+  menu with Escape/focus restoration, skip link, 44px targets and truncation for long account names.
+- Planner: visible editorial title, geometric accents, shared cards/fields/switches, square tabs,
+  semantic primary-color calendar edges and a compact in-flow footer. Existing focused Tasks /
+  Rules / Calendar views, selection, drag/resize, stale guards and publishing flow are retained.
+- Legal, branded 404 and retry pages follow the same system. Branded loading is scoped to auth and
+  planner routes: a root loading boundary would make the retired `/docs` route a streamed soft 404.
+  Missing routes and `/docs` continue to return actual HTTP 404 responses.
+- Browser/favicon/Apple assets use the updated blue calendar identity; versioned PNG v10 references
+  prevent the previous palette being retained by favicon caches. Legacy `/calendra.html` still
+  redirects to the native landing through the existing Next.js configuration.
+
+Validation: lint/typecheck, 233 automated tests / 54 suites, production build, landing Chromium at
+seven widths (320–1440), and account/legal/404/planner flows at five widths (320/390/768/1280/1440).
+Checks cover shared font/square cards, overflow, long authenticated names, mobile menu focus,
+auth error/private/demo rejection and retry, real zero-key draft build, Rules toggles, provisional
+intake/discard and publishing navigation. OAuth capabilities use browser fixtures; external Google
+sign-in, real calendar writes and LLM inference are not claimed. Error retry code is compiled and
+regression-checked, not a claim of exhaustive production-fault recovery certification.

@@ -15,7 +15,9 @@
     "smoke": "tsx scripts/smoke.ts",
     "test:ui": "node scripts/run-tests.mjs tests/ui.test.ts",
     "typecheck": "tsc --noEmit && tsc --noEmit -p tsconfig.tests.json",
-    "test:browser": "node scripts/check-landing-browser.mjs"
+    "test:browser": "node scripts/check-bauhaus-browser.mjs && node scripts/check-site-browser.mjs",
+    "test:browser:site": "node scripts/check-site-browser.mjs",
+    "icons": "node scripts/build-icons.mjs"
   },
   "dependencies": {
     "@langchain/anthropic": "^1.5.12",
@@ -23,14 +25,11 @@
     "@langchain/google-genai": "^2.3.2",
     "@langchain/openai": "^1.6.2",
     "clsx": "^2.1.1",
-    "date-fns": "^4.4.0",
-    "framer-motion": "^14.2.0",
     "googleapis": "^185.0.0",
     "lucide-react": "^1.57.0",
     "next": "15.5.27",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "tailwind-merge": "^3.7.0",
     "zod": "^4.6.7",
     "zustand": "^5.0.15"
   },

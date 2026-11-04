@@ -576,3 +576,41 @@ Validation: 215 tests / 52 suites, lint/typecheck, production build, seven-width
 (including planner at 390/768/1280). New tests cover timezone/DST, context refresh/errors, private
 access, streamed tool steps/default JSON, provider budget, strict constraints and conservation.
 60-day metrics, live p95, full WCAG/device acceptance and live Google/LLM sign-off remain pending.
+
+## Rules controls repair — 2026-10-24
+
+Effective weekend hours (workingHoursFor) are the source of truth for Rules switch state. A single
+weekend toggle materializes both effective weekend windows, then sets weekendMode=off so null really
+means off. The master toggle sets explicit Saturday/Sunday hours rather than only changing the legacy
+mode. Shared RuleTimeWindow keeps incomplete edits local and commits only valid ordered 15-minute
+windows; end 00:00 means 1440. Validated number/text controls prevent empty task/rule edits corrupting
+planner inputs. PaperToggle uses an independent 44px target with a contained visible track/thumb;
+press buttons now have aria-pressed and distinct fills. Desktop Rules uses two columns with stacked
+energy/limits/lunch; mobile stays one column. Misleading implicit-overflow preference buttons removed.
+230 tests, lint/typecheck/build and Chromium landing seven widths + planner/Rules four widths passed.
+
+## Site-wide Bauhaus rollout — 2026-10-27
+
+User extended the landing Bauhaus direction to the complete website. Global compatibility tokens
+now map to F5F2E9 / 191919 / 173BB5 / C73527 / F3CD38, DM Sans, zero-radius surfaces. Shared headers,
+footers and AuthPanel redesigned; planner gains visible masthead and in-flow footer while preserving
+all view/state behavior. Legal and custom 404/retry pages match. PNG/favicon identity now v10.
+Route loading components must remain scoped to signin/signup/planner: root loading.tsx caused docs
+notFound() to stream HTTP200; removed the root boundary to preserve actual404. Shared PageLoading
+provides the branded loading view. All233tests/lint/typecheck/build and both browser suites passed;
+landing7widths, auth/legal/404/planner5widths. Auth capabilities are fixtures in browser acceptance,
+not external Google proof; zero-key planner builds use real routes. No PR/merge or production-live
+integration claim. Existing legacy HTML redirect remains authoritative.
+
+## Compact repository / README and favicon — 2026-11-04
+
+README intentionally stays minimal: centered calendar SVG above Calendra, one description,
+local run commands and test/build commands; no internal Markdown links or implementation essays.
+Internal docs remain repository-only. Canonical src/app/icon.svg is also the README image; its tighter
+viewBox and opaque blue details improve small-size clarity. `npm run icons` reproduces v11 PNGs,
+Apple icon and a four-resolution PNG-backed ICO (16/32/48/64). Metadata uses v11 for cache refresh.
+Removed archived standalone source/generated HTML and its build/check scripts, old v2–v10 icon
+assets, unused Next starter SVGs, ad-hoc dbg/why scripts and unused framer-motion/date-fns/tailwind-merge
+dependencies. Kept the /calendra.html -> / permanent redirect for bookmarks; kept active tests,
+native/browser checks and internal docs. Lint/typecheck, 234 tests, production build and HTTP icon/
+metadata/legacy-redirect checks passed. No live external-provider verification implied.
